@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Preeti 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Countdown Screen -->
+  <div id="countdown" class="countdown-screen">
+    <h1 id="countText">10</h1>
+  </div>
+
+  <!-- Fireworks + Confetti canvas -->
+  <canvas id="fireworksCanvas" class="hidden"></canvas>
+
+  <!-- Main intro -->
+  <div class="container hidden" id="intro">
+    <h1 id="title"></h1>
+    <p id="line1"></p>
+    <p id="line2"></p>
+    <p id="line3"></p>
+    <button id="celebrateBtn" class="hidden">🎉 Let’s Celebrate 🎉</button>
+  </div>
+
+  <!-- Cake section -->
+  <!-- Cake section -->
+<div class="container hidden" id="cakeSection">
+  <h2 id="cakeTitle">🎂 Birthday Cake 🎂</h2>
+
+  <div class="cake-wrap">
+    <!-- 3D layered cake -->
+    <div class="cake-3d">
+  <img src="cake.png" alt="Birthday Cake" class="cake-image"/>
+</div>
+    <!-- Candles -->
+    <div id="candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+  </div>
+
+  <div class="cake-controls">
+    <button id="bujhaBtn">🧯 Bujha De</button>
+  </div>
+</div>
+  <script src="script.js"></script>
+<!-- Balloons container -->
+<div id="balloonContainer"></div>
+
+<!-- Floating hearts container -->
+<div id="heartsContainer"></div>
+
+<!-- Optional floating photo -->
+<div id="floatingPhoto" class="hidden">
+  <img src="flower1.jpg" alt="flower" />
+</div>
+ <audio id="happyMusic" src="song.mp3"></audio>
+</body>
+</html>

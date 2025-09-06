@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Live Days — Preeti</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { 
+      background: linear-gradient(135deg,#241332,#4b1a4a); 
+      color:#fff; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      padding:24px;
+    }
+    .full {
+      max-width:900px; 
+      background:rgba(255,255,255,0.05); 
+      padding:28px; 
+      border-radius:16px; 
+      text-align:left; 
+      box-shadow:0 12px 32px rgba(0,0,0,0.6);
+    }
+    h1{ font-size:2rem; color:#ffd6ea }
+    p{ font-size:1.2rem; line-height:1.55; color:#fff8f5 }
+    .days{ font-weight:700; font-size:2.4rem; color:#ffd166; margin:12px 0 }
+    .small{ color:#ddd; margin-top:18px; font-size:0.95rem }
+    .photos { 
+      margin-top:20px; 
+      display:flex; 
+      gap:16px; 
+      justify-content:center; 
+      opacity:0; 
+      transition:opacity 1s ease;
+    }
+    .photos img { 
+      width:150px; 
+      border-radius:12px; 
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="full">
+    <h1 id="msgTitle"></h1>
+    <p id="msgLine1"></p>
+    <p id="msgLine2"></p>
+    <p id="msgLine3" class="small"></p>
+
+    <div class="photos" id="photos">
+      <img src="flower1.jpg" alt="Flower 1">
+      <img src="flower2.jpg" alt="Flower 2">
+      <img src="flower3.jpg" alt="Flower 3">
+    </div>
+  </div>
+
+  <script>
+    function typeWriter(element, text, speed = 100, callback = null) {
+      let i = 0;
+      element.innerHTML = "";
+      function typing() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, speed);
+        } else {
+          if (callback) callback();
+        }
+      }
+      typing();
+    }
+
+    const msgTitle = document.getElementById("msgTitle");
+    const msgLine1 = document.getElementById("msgLine1");
+    const msgLine2 = document.getElementById("msgLine2");
+    const msgLine3 = document.getElementById("msgLine3");
+    const photos = document.getElementById("photos");
+
+    typeWriter(msgTitle, "One small note — a life count", 100, () => {
+      typeWriter(msgLine1, "You have lived 6575 days on this earth. Every single one is special — birthdays are reminders, but your life every day is the real celebration.", 100, () => {
+        typeWriter(msgLine2, "Live happily, learn, laugh, love — and remember: the world is lucky to have you. I wish you always stay happy. ❤️", 100, () => {
+          typeWriter(msgLine3, "aur haan padh le ab bye", 100, () => {
+            // show photos after typing finishes
+            setTimeout(() => {
+              photos.style.opacity = 1;
+            }, 500);
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
